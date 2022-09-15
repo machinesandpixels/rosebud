@@ -4,10 +4,12 @@ import {
   ThunkAction,
 } from '@reduxjs/toolkit';
 import photoReducer from '../slices/photoSlice';
+import favoriteReducer from '../slices/favoriteSlice';
 
 export const store = configureStore({
   reducer: {
     photos: photoReducer,
+    favorites: favoriteReducer,
   },
 });
 

@@ -5,7 +5,6 @@ import {
 import axios from 'axios';
 import type { RootState } from '../store/store';
 
-// here we are typing the types for the state
 export type PhotoState = {
     data: [];
     pending: boolean;
@@ -18,9 +17,15 @@ const initialState: PhotoState = {
   error: false,
 };
 
+const BASE_URL = 'https://api.pexels.com/v1/search?query=';
 // This action is what we will call using the dispatch in order to trigger the API call.
-export const getPhotos = createAsyncThunk('api/photos', async () => {
-  const { data } = await axios.get('https://picsum.photos/v2/list');
+export const getPhotos = createAsyncThunk('api/photos', async (search: string) => {
+  const headers = {
+    'Content-type': 'application/json',
+    'Authorization':  `${process.env.NEXT_PUBLIC_API_KEY}`,
+  };
+
+  const { data } = await axios.get(`${BASE_URL}${search}`, { headers });
   return data;
 });
 
@@ -28,7 +33,6 @@ export const photoSlice = createSlice({
   name: 'photo',
   initialState,
   reducers: {
-  // leave this empty here
   },
   extraReducers: (builder) => {
     builder

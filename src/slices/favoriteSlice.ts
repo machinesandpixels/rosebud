@@ -5,18 +5,18 @@ import {
 import type { RootState } from '../store/store';
 
 export type FavoriteState = {
-    favorites: [];
+    favorites: string[];
 };
 
 const initialState: FavoriteState = {
-  favorites: [],
+  favorites: [''],
 };
 
 export const favoriteSlice = createSlice({
   name: 'favorite',
   initialState,
   reducers: {
-    addToFavorites: (state, action: PayloadAction) => {
+    addToFavorites: (state, action: PayloadAction<string>) => {
       state.favorites.push(action.payload);
     },
   },

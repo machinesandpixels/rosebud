@@ -10,6 +10,7 @@ import {
 } from '../slices/photoSlice';
 import {
   addToFavorites,
+  removeFavorite,
   selectFavorites,
 } from '../slices/favoriteSlice';
 
@@ -31,9 +32,11 @@ const Images: NextPage = () => {
     <div>
       <h2>Images</h2>
       <button type="button" onClick={() => dispatch(addToFavorites('image'))}>
-        CLICK ME!
+        Add
       </button>
-      <p>here</p>
+      <button type="button" onClick={() => dispatch(removeFavorite('image'))}>
+        Remove
+      </button>
       {/* {pending && <p>Loading...</p>}
       {data && <p>{data}</p>}
       {error && <p>Oops, something went wrong</p>} */}

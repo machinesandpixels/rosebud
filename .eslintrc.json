@@ -56,7 +56,7 @@
       "error"
     ],
     "prettier/prettier": [
-      "error",
+      "off",
       {
         "endOfLine": "auto"
       }
@@ -67,7 +67,13 @@
       "namedComponents": ["function-declaration", "arrow-function"],
       "unnamedComponents": "arrow-function"
     }
-  ]
+  ],
+  "no-param-reassign": ["error", {
+    "props": true,
+    "ignorePropertyModificationsFor": [
+      "state"
+    ]
+  }]
   },
   "settings": {
     "import/resolver": {

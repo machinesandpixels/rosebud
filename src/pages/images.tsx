@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import type { NextPage } from 'next';
+import styles from '../../styles/Home.module.css';
+
 import {
   useAppDispatch,
   useAppSelector,
@@ -14,7 +16,7 @@ import {
   selectFavorites,
 } from '../slices/favoriteSlice';
 
-const Images: NextPage = () => {
+const ImageGallery: NextPage = () => {
   const dispatch = useAppDispatch();
   const {
     data,
@@ -23,14 +25,27 @@ const Images: NextPage = () => {
   } = useAppSelector(selectPhotos);
   const { favorites } = useAppSelector(selectFavorites);
 
-  useEffect(() => {
-    dispatch(getPhotos('venice'));
-  }, [dispatch]);
-  console.log(data);
-  console.log(favorites);
+  // useEffect(() => {
+  //   dispatch(getPhotos('venice'));
+  // }, [dispatch]);
+  // console.log(data);
+  // console.log(favorites);
   return (
     <div>
       <h2>Images</h2>
+      <div className={styles.gallery}>
+        <div className="">Left</div>
+        <div className={styles.middle}>
+          {/* Middle */}
+          <div className={styles.box}>1</div>
+          <div className={styles.box}>2</div>
+          <div className={styles.box}>3</div>
+          <div className={styles.box}>4</div>
+          <div className={styles.box}>5</div>
+          <div className={styles.box}>6</div>
+        </div>
+        <div className="">Right</div>
+      </div>
       <button type="button" onClick={() => dispatch(addToFavorites('image'))}>
         Add
       </button>
@@ -44,4 +59,4 @@ const Images: NextPage = () => {
   );
 };
 
-export default Images;
+export default ImageGallery;

@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import type { NextPage } from 'next';
-import styles from '../../styles/Home.module.css';
+import TrendingColumn from '../components/TrendingColumn';
+import FavoritesColumn from '../components/FavoritesColumn';
+import ImageGalleryColumn from '../components/ImageGalleryColumn';
+import styles from '../../styles/ImageGallery.module.css';
 
 import {
   useAppDispatch,
@@ -16,7 +19,7 @@ import {
   selectFavorites,
 } from '../slices/favoriteSlice';
 
-const ImageGallery: NextPage = () => {
+const Images: NextPage = () => {
   const dispatch = useAppDispatch();
   const {
     data,
@@ -25,27 +28,19 @@ const ImageGallery: NextPage = () => {
   } = useAppSelector(selectPhotos);
   const { favorites } = useAppSelector(selectFavorites);
 
-  // useEffect(() => {
-  //   dispatch(getPhotos('venice'));
-  // }, [dispatch]);
-  // console.log(data);
-  // console.log(favorites);
+  useEffect(() => {
+    dispatch(getPhotos('venice'));
+  }, [dispatch]);
+  console.log(data);
+  console.log(favorites);
   return (
     <div>
       <h2>Images</h2>
-      <div className={styles.gallery}>
-        <div className="">Left</div>
-        <div className={styles.middle}>
-          {/* Middle */}
-          <div className={styles.box}>1</div>
-          <div className={styles.box}>2</div>
-          <div className={styles.box}>3</div>
-          <div className={styles.box}>4</div>
-          <div className={styles.box}>5</div>
-          <div className={styles.box}>6</div>
-        </div>
-        <div className="">Right</div>
-      </div>
+      <main className={styles.grid}>
+        <TrendingColumn />
+        <ImageGalleryColumn />
+        <FavoritesColumn />
+      </main>
       <button type="button" onClick={() => dispatch(addToFavorites('image'))}>
         Add
       </button>
@@ -59,4 +54,4 @@ const ImageGallery: NextPage = () => {
   );
 };
 
-export default ImageGallery;
+export default Images;

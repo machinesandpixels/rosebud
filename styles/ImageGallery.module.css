@@ -1,0 +1,36 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-gap: 40px;
+
+    /* max-width: 1200px;
+    margin: 0 auto; */
+
+    /* max-width: 1500px; */
+    /* background-color: #2196F3; */
+    /* padding: 10px; */
+  }
+  
+.column {
+    background-color: rgba(240, 240, 240, 0.8);
+    text-align: center;
+    padding: 2rem;
+    font-size: 30px;
+}
+  
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+    /* padding: 10px; */
+    /* max-width: 1500px; */
+}
+  
+.card {
+    background-color: #000000;
+    max-width: 280px;
+    max-height: 280px;
+    height: 280px;
+    border-radius: .4rem;
+}
+  

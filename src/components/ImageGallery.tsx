@@ -1,9 +1,19 @@
 import React from 'react';
+import Card from './Card';
 import styles from '../../styles/ImageGallery.module.css';
 
 const ImageGallery = () => (
-  <div className={styles.gallery}>
-    <div className={styles.card}>1</div>
+  <section className={styles.gallery}>
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    {/* <div className={styles.card}>1</div>
     <div className={styles.card}>2</div>
     <div className={styles.card}>3</div>
     <div className={styles.card}>4</div>
@@ -12,7 +22,10 @@ const ImageGallery = () => (
     <div className={styles.card}>7</div>
     <div className={styles.card}>8</div>
     <div className={styles.card}>9</div>
-  </div>
+    <div className={styles.cardSm}>9</div>
+    <div className={styles.cardSm}>9</div>
+    <div className={styles.cardSm}>9</div> */}
+  </section>
 );
 
 export default ImageGallery;

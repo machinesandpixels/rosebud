@@ -1,27 +1,32 @@
 .grid {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
-    grid-gap: 40px;
-
+    grid-gap: 25px;
     /* max-width: 1200px;
     margin: 0 auto; */
-
     /* max-width: 1500px; */
     /* background-color: #2196F3; */
     /* padding: 10px; */
   }
   
 .column {
-    background-color: rgba(240, 240, 240, 0.8);
+    /* background-color: rgba(240, 240, 240, 0.8); */
+    background-color: #f3f3f3;
     text-align: center;
     padding: 2rem;
-    font-size: 30px;
+    font-size: 25px;
+    /* border: solid 1px #000000; */
+    height: 600px;
+    max-height: 600px;
+    overflow: scroll;
+    border-radius: .5rem;
+    border: solid 2px #cccbcb;
 }
   
 .gallery {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 30px;
+    grid-gap: 25px;
     /* padding: 10px; */
     /* max-width: 1500px; */
 }
@@ -31,6 +36,27 @@
     max-width: 280px;
     max-height: 280px;
     height: 280px;
-    border-radius: .4rem;
+    /* max-width: 230px;
+    max-height: 230px;
+    height: 230px; */
+    /* border-radius: .2rem; */
 }
+.cardSm {
+    background-color: #f3f3f3;
+    max-width: 230px;
+    max-height: 230px;
+    height: 230px;
+    border-radius: .5rem;
+    border: solid 2px #cccbcb;
+}
+
+.logo {
+    height: 1em;
+    margin-left: 0.5rem;
+  }
+ 
+/* .scroll {
+    overflow:scroll;
+    height: 100px;
+} */
   

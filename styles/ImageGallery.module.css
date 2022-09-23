@@ -48,6 +48,8 @@
     height: 230px;
     border-radius: .5rem;
     border: solid 2px #cccbcb;
+    margin: 0 auto;
+    margin-top: 1rem;
 }
 
 .logo {
@@ -55,6 +57,11 @@
     margin-left: 0.5rem;
   }
  
+/* .favoriteIcon {
+   width: 15px;
+   height: 15px;
+} */
+
 /* .scroll {
     overflow:scroll;
     height: 100px;

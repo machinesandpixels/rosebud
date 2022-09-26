@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { FiHeart } from 'react-icons/fi';
+// import EffectSlider from './EffectSlider';
 import styles from '../../styles/ImageGallery.module.css';
 
 const Card = () => {

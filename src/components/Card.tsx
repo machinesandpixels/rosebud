@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { FiHeart } from 'react-icons/fi';
 // import EffectSlider from './EffectSlider';
 // import {
@@ -12,6 +11,7 @@ import { FiHeart } from 'react-icons/fi';
 //   selectFavorites,
 // } from '../slices/favoriteSlice';
 import styles from '../../styles/ImageGallery.module.css';
+import ImageSlider from './ImageSlider';
 
 const Card = () => {
   // const dispatch = useAppDispatch();
@@ -28,8 +28,6 @@ const Card = () => {
 
   return (
     <div className={styles.card}>
-      {/* <span className={styles.logo}> */}
-      {/* <div className={`${styles.cardContainer}`}> */}
       <div className={styles.imageContainer}>
         <div className={styles.favoriteIcon}>
           <FiHeart
@@ -38,16 +36,10 @@ const Card = () => {
             size="11"
           />
         </div>
-        <Image
-          className={styles.image}
-          src="https://picsum.photos/id/177/200/"
-          alt="card-image"
-          width={200}
-          height={200}
-        />
+        <div className={styles.imageSlider}>
+          <ImageSlider />
+        </div>
       </div>
-      {/* </span> */}
-      {/* </div> */}
     </div>
   );
 };

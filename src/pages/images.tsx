@@ -1,5 +1,10 @@
 import React, { useEffect } from 'react';
 import type { NextPage } from 'next';
+import TrendingColumn from '../components/TrendingColumn';
+import FavoritesColumn from '../components/FavoritesColumn';
+import ImageGalleryColumn from '../components/ImageGalleryColumn';
+import styles from '../../styles/ImageGallery.module.css';
+
 import {
   useAppDispatch,
   useAppSelector,
@@ -31,6 +36,11 @@ const Images: NextPage = () => {
   return (
     <div>
       <h2>Images</h2>
+      <main className={styles.grid}>
+        <TrendingColumn />
+        <ImageGalleryColumn />
+        <FavoritesColumn />
+      </main>
       <button type="button" onClick={() => dispatch(addToFavorites('image'))}>
         Add
       </button>

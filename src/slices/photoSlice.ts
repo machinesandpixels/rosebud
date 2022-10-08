@@ -6,13 +6,13 @@ import axios from 'axios';
 import type { RootState } from '../store/store';
 
 export type PhotoState = {
-    data: [];
+    data: { photos: [] };
     pending: boolean;
     error: boolean;
   };
 
 const initialState: PhotoState = {
-  data: [],
+  data: { photos: [] },
   pending: false,
   error: false,
 };

@@ -13,7 +13,7 @@ import { FiHeart } from 'react-icons/fi';
 import styles from '../../styles/ImageGallery.module.css';
 import ImageSlider from './ImageSlider';
 
-const Card = () => {
+const Card = ({image}) => {
   // const dispatch = useAppDispatch();
   const [isFavorite, setFavorite] = useState(false);
   // const { favorites } = useAppSelector(selectFavorites);
@@ -37,7 +37,7 @@ const Card = () => {
           />
         </div>
         <div className={styles.imageSlider}>
-          <ImageSlider />
+          <ImageSlider image={image} />
         </div>
       </div>
     </div>

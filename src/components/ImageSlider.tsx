@@ -9,16 +9,18 @@ import {
 } from '@chakra-ui/react';
 import styles from '../../styles/ImageGallery.module.css';
 
-const ImageSlider = () => {
+const ImageSlider = ({image}) => {
   const [sliderValue, setSliderValue] = useState(5);
   const [sliderRange, setSliderRange] = useState('0%');
   const [showTooltip, setShowTooltip] = useState(false);
+  // console.log(image.src.original);
   return (
     <>
       <Image
         style={{ filter: `grayscale(${sliderRange})` }}
         className={styles.image}
-        src="https://picsum.photos/id/177/200/"
+        src={image.src.original}
+        // src="https://picsum.photos/id/177/200/"
         alt="card-image"
         width={200}
         height={200}

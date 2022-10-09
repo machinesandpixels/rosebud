@@ -1,19 +1,31 @@
 import {
-  createAsyncThunk,
   createSlice,
+  createAsyncThunk,
+  PayloadAction,
 } from '@reduxjs/toolkit';
 import axios from 'axios';
 import type { RootState } from '../store/store';
 
-export type PhotoState = {
-    data: { photos: [] };
-    pending: boolean;
-    error: boolean;
-  };
+export type Src = {
+  original: string;
+}
 
-const initialState: PhotoState = {
-  data: { photos: [] },
+export type Photo = {
+  id: number;
+  photographer: string;
+  photographer_url: string;
+  src: Src;
+}
+
+export type Api = {
+  pending: boolean;
+  data: { photos: Photo[] }
+  error: boolean;
+}
+
+const initialState: Api = {
   pending: false,
+  data: { photos: [] },
   error: false,
 };
 
@@ -39,9 +51,9 @@ export const photoSlice = createSlice({
       .addCase(getPhotos.pending, (state) => {
         state.pending = true;
       })
-      .addCase(getPhotos.fulfilled, (state, { payload }) => {
+      .addCase(getPhotos.fulfilled, (state, action: PayloadAction<Photo[]>) => {
         state.pending = false;
-        state.data = payload;
+        state.data = action.payload;
       })
       .addCase(getPhotos.rejected, (state) => {
         state.pending = false;

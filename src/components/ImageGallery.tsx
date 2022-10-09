@@ -22,8 +22,6 @@ const ImageGallery = () => {
     dispatch(getPhotos('venice'));
   }, [dispatch]);
 
-  console.log(data.photos);
-
   return (
     <section className={styles.gallery}>
       { data.photos.map(obj => {

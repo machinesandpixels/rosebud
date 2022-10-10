@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Card from './Card';
+import ImageContainer from './ImageContainer';
 import {
   useAppDispatch,
   useAppSelector,
@@ -24,9 +24,17 @@ const ImageGallery = () => {
 
   return (
     <section className={styles.gallery}>
-      { data.photos.map(obj => {
-        return <Card key={obj.id} image={obj} />
-      }) }
+      {pending && <p>Loading...</p>}
+      { data && data.photos.map(({ id, src: { medium } }) => (
+        <div className={`${styles.card}`} key={id}>
+          <div>
+            <ImageContainer
+              url={medium}
+            />
+          </div>
+        </div>
+      )) }
+      {error && <p>Oops, something went wrong</p>}
       {/* {pending && <p>Loading...</p>}
       {data && <p>{data}</p>}
       {error && <p>Oops, something went wrong</p>} */}

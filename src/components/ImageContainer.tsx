@@ -10,8 +10,11 @@ import {
 } from '@chakra-ui/react';
 import styles from '../../styles/ImageGallery.module.css';
 
-const ImageSlider = ({ image }) => {
+type Props = {
+  url: string;
+}
 
+const ImageContainer = ({ url }: Props) => {
   const [isFavorite, setFavorite] = useState(false);
 
   const handleFavorite = () => {
@@ -20,7 +23,7 @@ const ImageSlider = ({ image }) => {
   const [sliderValue, setSliderValue] = useState(5);
   const [sliderRange, setSliderRange] = useState('0%');
   const [showTooltip, setShowTooltip] = useState(false);
- 
+  console.log(url);
   return (
     <div className={styles.imageContainer}>
       <div className={styles.favoriteIcon}>
@@ -33,7 +36,7 @@ const ImageSlider = ({ image }) => {
       <Image
         style={{ filter: `grayscale(${sliderRange})` }}
         className={styles.image}
-        src={image.src.original}
+        src={url}
         // src="https://picsum.photos/id/177/200/"
         alt="card-image"
         width={200}
@@ -68,4 +71,4 @@ const ImageSlider = ({ image }) => {
   );
 };
 
-export default ImageSlider;
+export default ImageContainer;

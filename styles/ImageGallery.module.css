@@ -70,7 +70,8 @@
 .imageContainer {
     position: relative;
     background-color: rgb(0, 0, 0);
-    height: 200px;
+    max-height: 200px;
+    max-width: 200px;
 }
 
 .favoriteIcon {
@@ -93,7 +94,3 @@
     100% { opacity: 1; }
 }
 
-/* .scroll {
-    overflow:scroll;
-    height: 100px;
-} */

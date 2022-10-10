@@ -7,7 +7,7 @@ import axios from 'axios';
 import type { RootState } from '../store/store';
 
 export type Src = {
-  original: string;
+  medium: string;
 }
 
 export type Photo = {

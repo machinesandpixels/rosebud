@@ -10,7 +10,7 @@ import React, { useState } from 'react';
 //   selectFavorites,
 // } from '../slices/favoriteSlice';
 import styles from '../../styles/ImageGallery.module.css';
-import ImageSlider from './ImageSlider';
+import ImageSlider from './ImageContainer';
 
 const Card = ({ image }) => {
   // const dispatch = useAppDispatch();

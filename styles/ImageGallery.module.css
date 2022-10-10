@@ -34,9 +34,16 @@
 }
   
 .gallery {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 25px;
+    grid-gap: 25px; */
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 1rem;
+    grid-auto-flow: dense;
+    padding: 1rem;
+
     /* padding: 10px; */
     /* max-width: 1500px; */
 

@@ -94,10 +94,11 @@
     left: 210px;
 }
 
-.logo {
-    height: 1em;
-    margin-left: 0.5rem;
-  }
+.downloadIcon {
+    position: absolute;
+    bottom: 0;
+    left: 210px;
+}
 
 .image {
     animation: fadeIn 2.5s; 

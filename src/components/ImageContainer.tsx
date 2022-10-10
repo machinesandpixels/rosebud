@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FiHeart } from 'react-icons/fi';
+import { HiDownload } from 'react-icons/hi';
+
 import Image from 'next/image';
 import {
   Slider,
@@ -42,6 +44,11 @@ const ImageContainer = ({ url }: Props) => {
         width={200}
         height={200}
       />
+      <div className={styles.downloadIcon}>
+        <HiDownload
+          size="12"
+        />
+      </div>
       <Slider
         id="slider"
         defaultValue={0}

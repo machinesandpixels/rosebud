@@ -1,12 +1,19 @@
 .grid {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
-    grid-gap: 25px;
-    /* max-width: 1200px;
+    /* grid-gap: 25px; */
+
+    grid-gap: 15px;
+
+    /* max-width: 1300px;
     margin: 0 auto; */
+
     /* max-width: 1500px; */
-    /* background-color: #2196F3; */
-    /* padding: 10px; */
+
+    padding: 18px;
+
+    /* background-color: #000000; */
+    /* background-color: #b8b8b8; */
   }
   
 .column {
@@ -15,9 +22,15 @@
     text-align: center;
     padding: 1rem;
     font-size: 25px;
-    /* border: solid 1px #000000; */
-    border-radius: .5rem;
-    /* border: solid 2px #cccbcb; */
+
+    /* border: solid 5px #000000; */
+    border-radius: 5px;
+
+    border: solid 2px #eaeaea;
+
+    height: 600px;
+    max-height: 600px;
+    overflow: scroll;
 }
   
 .gallery {
@@ -26,9 +39,10 @@
     grid-gap: 25px;
     /* padding: 10px; */
     /* max-width: 1500px; */
-    height: 600px;
+
+    /* height: 600px;
     max-height: 600px;
-    overflow: scroll;
+    overflow: scroll; */
 }
   
 .card {

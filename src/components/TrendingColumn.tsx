@@ -15,6 +15,12 @@ const TrendingColumn = () => (
       <div className={column.card}>
         image
       </div>
+      <div className={column.card}>
+        image
+      </div>
+      <div className={column.card}>
+        image
+      </div>
     </div>
   </aside>
 );

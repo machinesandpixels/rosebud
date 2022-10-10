@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { FiHeart } from 'react-icons/fi';
 import { HiDownload } from 'react-icons/hi';
-
 import Image from 'next/image';
+
+import { saveAs } from 'file-saver';
 import {
   Slider,
   SliderTrack,
@@ -22,10 +23,16 @@ const ImageContainer = ({ url }: Props) => {
   const handleFavorite = () => {
     setFavorite(!isFavorite);
   };
+
+  const downloadImage = (img: string) => {
+    console.log(img);
+    // saveAs(img, 'image.jpg');
+  };
+
   const [sliderValue, setSliderValue] = useState(5);
   const [sliderRange, setSliderRange] = useState('0%');
   const [showTooltip, setShowTooltip] = useState(false);
-  console.log(url);
+
   return (
     <div className={styles.imageContainer}>
       <div className={styles.favoriteIcon}>
@@ -46,6 +53,7 @@ const ImageContainer = ({ url }: Props) => {
       />
       <div className={styles.downloadIcon}>
         <HiDownload
+          onClick={() => { downloadImage(url); }}
           size="12"
         />
       </div>

@@ -1,10 +1,27 @@
 import React from 'react';
 import styles from '../../styles/ImageGallery.module.css';
+import column from '../../styles/Column.module.css';
 
 const FavoritesColumn = () => (
-
   <aside className={`${styles.column} ${styles.scroll}`}>
-    Favorites
+    <h3> Favorites </h3>
+    <div className={column.gallery}>
+      <div className={column.card}>
+        image
+      </div>
+      <div className={column.card}>
+        image
+      </div>
+      <div className={column.card}>
+        image
+      </div>
+      <div className={column.card}>
+        image
+      </div>
+      <div className={column.card}>
+        image
+      </div>
+    </div>
   </aside>
 );
 

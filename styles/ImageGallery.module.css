@@ -34,10 +34,13 @@
 }
   
 .gallery {
+    /* ------------------------------Non Responsive */
+    
     /* display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 25px; */
 
+     /* -----------------------------Responsive */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-gap: 1rem;

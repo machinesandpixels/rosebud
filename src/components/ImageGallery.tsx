@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Skeleton, Stack } from '@chakra-ui/react';
 import ImageContainer from './ImageContainer';
 import {
   useAppDispatch,
@@ -24,16 +25,24 @@ const ImageGallery = () => {
 
   return (
     <section className={styles.gallery}>
-      {pending && <p>Loading...</p>}
-      { data && data.photos.map(({ id, src: { medium } }) => (
-        <div className={`${styles.card}`} key={id}>
-          <div>
-            <ImageContainer
-              url={medium}
-            />
-          </div>
+      { data.photos.length === 0
+        ? <div className={styles.gallery}>
+          {[...Array(15)].map((_, i) => (
+            <Stack key={i}>
+              <Skeleton className={`${styles.card}`} height="180px" width="180px" />
+              <Skeleton className={`${styles.card}`} height="7px" width="180px" />
+            </Stack>
+          ))}
         </div>
-      )) }
+        : data.photos.map(({ id, src: { medium } }) => (
+          <div className={`${styles.card}`} key={id}>
+            <div>
+              <ImageContainer
+                url={medium}
+              />
+            </div>
+          </div>
+        )) }
       {error && <p>Oops, something went wrong</p>}
       {/* {pending && <p>Loading...</p>}
       {data && <p>{data}</p>}

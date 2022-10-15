@@ -1,12 +1,19 @@
 .grid {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
-    grid-gap: 25px;
-    /* max-width: 1200px;
+    /* grid-gap: 25px; */
+
+    grid-gap: 15px;
+
+    /* max-width: 1300px;
     margin: 0 auto; */
+
     /* max-width: 1500px; */
-    /* background-color: #2196F3; */
-    /* padding: 10px; */
+
+    padding: 18px;
+
+    /* background-color: #000000; */
+    /* background-color: #b8b8b8; */
   }
   
 .column {
@@ -15,20 +22,37 @@
     text-align: center;
     padding: 1rem;
     font-size: 25px;
-    /* border: solid 1px #000000; */
-    border-radius: .5rem;
-    /* border: solid 2px #cccbcb; */
-}
-  
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-gap: 25px;
-    /* padding: 10px; */
-    /* max-width: 1500px; */
+
+    /* border: solid 5px #000000; */
+    border-radius: 5px;
+
+    border: solid 2px #eaeaea;
+
     height: 600px;
     max-height: 600px;
     overflow: scroll;
+}
+  
+.gallery {
+    /* ------------------------------Non Responsive */
+    
+    /* display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 25px; */
+
+     /* -----------------------------Responsive */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 1rem;
+    grid-auto-flow: dense;
+    padding: 1rem;
+
+    /* padding: 10px; */
+    /* max-width: 1500px; */
+
+    /* height: 600px;
+    max-height: 600px;
+    overflow: scroll; */
 }
   
 .card {
@@ -70,7 +94,8 @@
 .imageContainer {
     position: relative;
     background-color: rgb(0, 0, 0);
-    height: 200px;
+    max-height: 200px;
+    max-width: 200px;
 }
 
 .favoriteIcon {
@@ -79,10 +104,11 @@
     left: 210px;
 }
 
-.logo {
-    height: 1em;
-    margin-left: 0.5rem;
-  }
+.downloadIcon {
+    position: absolute;
+    bottom: 0;
+    left: 210px;
+}
 
 .image {
     animation: fadeIn 2.5s; 
@@ -93,8 +119,3 @@
     100% { opacity: 1; }
 }
 
-/* .scroll {
-    overflow:scroll;
-    height: 100px;
-} */
-  

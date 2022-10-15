@@ -3,7 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['picsum.photos'],
+    domains: ['api.pexels.com/v1', 'images.pexels.com'],
+    // domains: ['picsum.photos'],
   },
 };
 

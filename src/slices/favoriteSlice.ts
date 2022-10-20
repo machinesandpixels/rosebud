@@ -3,12 +3,17 @@ import {
 } from '@reduxjs/toolkit';
 import type { RootState } from '../store/store';
 
+export type FavoriteType = {
+      id: number;
+      url: string;
+};
+
 export type FavoriteState = {
-    favorites: string[];
+    favorites: FavoriteType[];
 };
 
 const initialState: FavoriteState = {
-  favorites: [''],
+  favorites: [],
 };
 
 export const favoriteSlice = createSlice({

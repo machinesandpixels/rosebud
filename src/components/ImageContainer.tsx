@@ -11,18 +11,34 @@ import {
   SliderThumb,
   Tooltip,
 } from '@chakra-ui/react';
+import {
+  addToFavorites,
+  removeFavorite,
+  selectFavorites,
+} from '../slices/favoriteSlice';
+import {
+  useAppDispatch,
+  useAppSelector,
+} from '../store/hooks';
 import styles from '../../styles/ImageGallery.module.css';
 
 type Props = {
+  id: number;
   url: string;
 }
 
-const ImageContainer = ({ url }: Props) => {
+const ImageContainer = ({ id, url }: Props) => {
+  const { favorites } = useAppSelector(selectFavorites);
   const [isFavorite, setFavorite] = useState(false);
+  const dispatch = useAppDispatch();
 
   const handleFavorite = () => {
-    setFavorite(!isFavorite);
+    // setFavorite(!isFavorite);
+    dispatch(addToFavorites({ id, url }));
+    // dispatch(removeFavorite('image'));
   };
+
+  console.log(favorites);
 
   const downloadImage = (img: string) => {
     console.log(img);
@@ -37,7 +53,7 @@ const ImageContainer = ({ url }: Props) => {
     <div className={styles.imageContainer}>
       <div className={styles.favoriteIcon}>
         <FiHeart
-          onClick={handleFavorite}
+          onClick={handleFavorite()}
           fill={isFavorite ? 'grey' : 'white'}
           size="11"
         />

@@ -38,6 +38,7 @@ const ImageGallery = () => {
           <div className={`${styles.card}`} key={id}>
             <div>
               <ImageContainer
+                id={id}
                 url={medium}
               />
             </div>

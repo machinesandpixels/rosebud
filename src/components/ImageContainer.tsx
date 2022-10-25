@@ -53,7 +53,7 @@ const ImageContainer = ({ id, url }: Props) => {
     <div className={styles.imageContainer}>
       <div className={styles.favoriteIcon}>
         <FiHeart
-          onClick={handleFavorite()}
+          onClick={() => { handleFavorite(); }}
           fill={isFavorite ? 'grey' : 'white'}
           size="11"
         />

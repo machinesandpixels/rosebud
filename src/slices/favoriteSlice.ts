@@ -21,6 +21,8 @@ export const favoriteSlice = createSlice({
   initialState,
   reducers: {
     addToFavorites: (state, { payload }) => {
+      console.log('PAYLOAD!');
+      console.log(payload);
       state.favorites.push(payload);
     },
     removeFavorite: (state, { payload: index }) => {

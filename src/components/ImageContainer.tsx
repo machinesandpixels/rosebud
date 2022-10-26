@@ -32,9 +32,13 @@ const ImageContainer = ({ id, url }: Props) => {
   const dispatch = useAppDispatch();
 
   const handleFavorite = () => {
-    // setFavorite(!isFavorite);
-    dispatch(addToFavorites({ id, url }));
-    // dispatch(removeFavorite('image'));
+    if (isFavorite) {
+      dispatch(removeFavorite({ id, url }));
+      setFavorite(false);
+    } else if (!isFavorite) {
+      dispatch(addToFavorites({ id, url }));
+      setFavorite(true);
+    }
   };
 
   console.log(favorites);
@@ -66,7 +70,6 @@ const ImageContainer = ({ id, url }: Props) => {
         width={200}
         height={200}
       />
-      <button onClick={() => {  dispatch(removeFavorite({ id, url })); }}>REMOVE</button>
       <div className={styles.downloadIcon}>
         <HiDownload
           onClick={() => { downloadImage(url); }}

@@ -21,16 +21,19 @@ export const favoriteSlice = createSlice({
   initialState,
   reducers: {
     addToFavorites: (state, { payload }) => {
-      console.log('PAYLOAD!');
-      console.log(payload);
-      state.favorites.push(payload);
+      if (state.favorites.length === 0) {
+        state.favorites.push(payload);
+      } else if (state.favorites.length > 0) {
+        const found = state.favorites.some((favorite) => favorite.id === payload.id);
+        if (!found) state.favorites.push(payload);
+      }
     },
-    removeFavorite: (state, { payload: index }) => {
-      state.favorites.splice(index, 1);
+    removeFavorite: (state, { payload }) => {
+      const index = state.favorites.findIndex((favorite) => favorite.id === payload.id);
+      if (index !== -1) {
+        state.favorites.splice(index, 1);
+      }
     },
-    // addToFavorites: (state, action: PayloadAction<string>) => {
-    //   state.favorites.push(action.payload);
-    // },
   },
 });
 

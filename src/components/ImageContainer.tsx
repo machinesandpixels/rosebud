@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { FiHeart } from 'react-icons/fi';
 import { HiDownload } from 'react-icons/hi';
 import Image from 'next/image';
-
 import { saveAs } from 'file-saver';
 import {
   Slider,
@@ -67,6 +66,7 @@ const ImageContainer = ({ id, url }: Props) => {
         width={200}
         height={200}
       />
+      <button onClick={() => {  dispatch(removeFavorite({ id, url })); }}>REMOVE</button>
       <div className={styles.downloadIcon}>
         <HiDownload
           onClick={() => { downloadImage(url); }}

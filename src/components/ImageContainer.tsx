@@ -27,7 +27,7 @@ type Props = {
 }
 
 const ImageContainer = ({ id, url }: Props) => {
-  const { favorites } = useAppSelector(selectFavorites);
+  // const { favorites } = useAppSelector(selectFavorites);
   const [isFavorite, setFavorite] = useState(false);
   const dispatch = useAppDispatch();
 
@@ -41,7 +41,7 @@ const ImageContainer = ({ id, url }: Props) => {
     }
   };
 
-  console.log(favorites);
+  // console.log(favorites);
 
   const downloadImage = (img: string) => {
     console.log(img);

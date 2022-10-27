@@ -6,21 +6,11 @@ const TrendingColumn = () => (
   <aside className={styles.column}>
     <h3>Trending</h3>
     <div className={column.gallery}>
-      <div className={column.card}>
-        image
-      </div>
-      <div className={column.card}>
-        image
-      </div>
-      <div className={column.card}>
-        image
-      </div>
-      <div className={column.card}>
-        image
-      </div>
-      <div className={column.card}>
-        image
-      </div>
+      <div className={column.card} />
+      <div className={column.card} />
+      <div className={column.card} />
+      <div className={column.card} />
+      <div className={column.card} />
     </div>
   </aside>
 );

@@ -9,13 +9,13 @@ import styles from '../../styles/ImageGallery.module.css';
 
 const Images: NextPage = () => (
   <div>
-  <Header />
-  <main className={styles.grid}>
-    <TrendingColumn />
-    <ImageGalleryColumn />
-    <FavoritesColumn />
-  </main>
-  <Footer />
+    <Header />
+    <main className={styles.grid}>
+      <TrendingColumn />
+      <ImageGalleryColumn />
+      <FavoritesColumn />
+    </main>
+    <Footer />
   </div>
 );
 

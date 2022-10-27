@@ -52,9 +52,14 @@ const ImageContainer = ({ id, url }: Props) => {
   };
 
   const j = JSON.stringify({ id, url });
-  const [sliderValue, setSliderValue] = useState(5);
+  const [sliderValue, setSliderValue] = useState(0);
   const [sliderRange, setSliderRange] = useState('0%');
   const [showTooltip, setShowTooltip] = useState(false);
+
+  const handleSlider = (e) => {
+    setSliderValue(e);
+    setSliderRange(`${e.toString()}%`);
+  };
 
   return (
     <div className={styles.imageContainer}>
@@ -87,17 +92,17 @@ const ImageContainer = ({ id, url }: Props) => {
         min={0}
         max={100}
         colorScheme="grey"
-        onChange={(v) => setSliderValue(v)}
-        onChange={(v) => setSliderRange(`${v.toString()}%`)}
+        onChange={(input) => handleSlider(input)}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
       >
         <SliderTrack>
           <SliderFilledTrack />
         </SliderTrack>
+        <div className={styles.tooltip} />
         <Tooltip
           hasArrow
-          bg="black"
+          bg="#000000"
           color="white"
           placement="top"
           isOpen={showTooltip}

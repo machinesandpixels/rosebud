@@ -13,11 +13,9 @@ import {
 import {
   addToFavorites,
   removeFavorite,
-  selectFavorites,
 } from '../slices/favoriteSlice';
 import {
   useAppDispatch,
-  useAppSelector,
 } from '../store/hooks';
 import styles from '../../styles/ImageGallery.module.css';
 
@@ -27,7 +25,6 @@ type Props = {
 }
 
 const ImageContainer = ({ id, url }: Props) => {
-  // const { favorites } = useAppSelector(selectFavorites);
   const [isFavorite, setFavorite] = useState(false);
   const dispatch = useAppDispatch();
 
@@ -41,13 +38,20 @@ const ImageContainer = ({ id, url }: Props) => {
     }
   };
 
-  // console.log(favorites);
-
   const downloadImage = (img: string) => {
     console.log(img);
     // saveAs(img, 'image.jpg');
   };
 
+  // This function will be triggered when you start dragging
+  const dragStartHandler = (
+    event: React.DragEvent<HTMLDivElement>,
+    data: string,
+  ) => {
+    event.dataTransfer.setData('image', data);
+  };
+
+  const j = JSON.stringify({ id, url });
   const [sliderValue, setSliderValue] = useState(5);
   const [sliderRange, setSliderRange] = useState('0%');
   const [showTooltip, setShowTooltip] = useState(false);
@@ -62,10 +66,11 @@ const ImageContainer = ({ id, url }: Props) => {
         />
       </div>
       <Image
+        onDragStart={(event) => dragStartHandler(event, j)}
+        draggable
         style={{ filter: `grayscale(${sliderRange})` }}
         className={styles.image}
         src={url}
-        // src="https://picsum.photos/id/177/200/"
         alt="card-image"
         width={200}
         height={200}

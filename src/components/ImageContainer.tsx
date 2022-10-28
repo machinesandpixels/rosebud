@@ -4,6 +4,16 @@ import { HiDownload } from 'react-icons/hi';
 import Image from 'next/image';
 import { saveAs } from 'file-saver';
 import {
+  Button,
+  Center,
+  Portal,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverArrow,
+  PopoverCloseButton,
   Slider,
   SliderTrack,
   SliderFilledTrack,
@@ -39,8 +49,7 @@ const ImageContainer = ({ id, url }: Props) => {
   };
 
   const downloadImage = (img: string) => {
-    console.log(img);
-    // saveAs(img, 'image.jpg');
+    saveAs(img, `${img}.jpg`);
   };
 
   // This function will be triggered when you start dragging
@@ -80,12 +89,33 @@ const ImageContainer = ({ id, url }: Props) => {
         width={200}
         height={200}
       />
-      <div className={styles.downloadIcon}>
-        <HiDownload
-          onClick={() => { downloadImage(url); }}
-          size="12"
-        />
-      </div>
+      <Popover>
+        <PopoverTrigger>
+          <div className={styles.downloadIcon}>
+            <HiDownload
+              size="12"
+            />
+          </div>
+        </PopoverTrigger>
+        <Portal>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverHeader fontWeight="semibold">
+              <Center>
+                <p>Download this image ?</p>
+              </Center>
+            </PopoverHeader>
+            <PopoverCloseButton />
+            <PopoverBody>
+              <Center onClick={() => { downloadImage(url); }} h="20px" color="white">
+                <Button w="140px" h="25px" bg="black">
+                  <p>Download</p>
+                </Button>
+              </Center>
+            </PopoverBody>
+          </PopoverContent>
+        </Portal>
+      </Popover>
       <Slider
         id="slider"
         defaultValue={0}

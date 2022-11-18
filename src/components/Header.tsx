@@ -12,7 +12,7 @@ const Header = () => {
     <div className={styles.headerContainer}>
       <h1 className={styles.header}>Rosebud&apos;s Gallery</h1>
       {/* <h1 className={styles.header}>Rosebud Images</h1> */}
-      <p>Find Your Inner Cinematographer</p>
+      <p>Find Your Inner Photographer</p>
       {/* <Button onClick={toggleColorMode} variant="link" colorScheme="black">
         try changing the theme.
       </Button> */}

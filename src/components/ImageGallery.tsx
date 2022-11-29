@@ -29,8 +29,8 @@ const ImageGallery = () => {
         ? <div className={styles.gallery}>
           {[...Array(15)].map((_, i) => (
             <Stack key={i}>
-              <Skeleton className={`${styles.card}`} height="180px" width="180px" />
-              <Skeleton className={`${styles.card}`} height="7px" width="180px" />
+              <Skeleton className={`${styles.card}`} height="200px" width="200px" />
+              <Skeleton className={`${styles.card}`} height="7px" width="200px" />
             </Stack>
           ))}
         </div>

@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../../styles/ImageGallery.module.css';
 
 const SidebarItem = ({ name, active, handleClick }) => {
+    const [isShown, setIsShown] = useState(false);
+
     return (
-        <button 
+      <div className="">
+         <p> 
+          { isShown ? name : '' }
+        </p>
+        <span 
           className={styles.sidebarItem}
+        onMouseEnter={() => setIsShown(true)}
+        onMouseLeave={() => setIsShown(false)}
           // className={`styles.sidebarItem ${active ? 'active' : ''}`}
           onClick={handleClick}
         >
-          {name}
-        </button>
+        </span>
+        </div>
       )
     };
 

@@ -31,36 +31,16 @@ type Props = {
   url: string;
 }
 const DEFAULT_OPTIONS = [
-  // {
-  //   name: 'Brightness',
-  //   property: 'brightness',
-  //   value: 0,
-  //   range: {
-  //     min: 0,
-  //     max: 200,
-  //   },
-  //   unit: '%',
-  // },
-  // {
-  //   name: 'Contrast',
-  //   property: 'contrast',
-  //   value: 0,
-  //   range: {
-  //     min: 0,
-  //     max: 200,
-  //   },
-  //   unit: '%',
-  // },
-  // {
-  //   name: 'Saturation',
-  //   property: 'saturate',
-  //   value: 0,
-  //   range: {
-  //     min: 0,
-  //     max: 200,
-  //   },
-  //   unit: '%',
-  // },
+  {
+    name: 'Grayscale',
+    property: 'grayscale',
+    value: 0,
+    range: {
+      min: 0,
+      max: 100,
+    },
+    unit: '%',
+  },
   {
     name: 'Blur',
     property: 'blur',
@@ -73,12 +53,32 @@ const DEFAULT_OPTIONS = [
     unit: 'px',
   },
   {
-    name: 'Grayscale',
-    property: 'grayscale',
-    value: 0,
+    name: 'Opacity',
+    property: 'opacity',
+    value: 100,
     range: {
-      min: 0,
-      max: 100,
+      min: 100,
+      max: 0,
+    },
+    unit: '%',
+  },
+  // {
+  //   name: 'Brightness',
+  //   property: 'brightness',
+  //   value: 0,
+  //   range: {
+  //     min: 0,
+  //     max: 200,
+  //   },
+  //   unit: '%',
+  // },
+  {
+    name: 'Contrast',
+    property: 'contrast',
+    value: 100,
+    range: {
+      min: 100,
+      max: 200,
     },
     unit: '%',
   },
@@ -89,7 +89,7 @@ const ImageContainer = ({ id, url }: Props) => {
   const [options, setOptions] = useState(DEFAULT_OPTIONS);
   const selectedOption = options[selectedOptionIndex];
 
-  function handleSliderChange({ target }) {
+  function handleSlider({ target }) {
     setOptions((prevOptions) => prevOptions.map((option, index) => {
       if (index !== selectedOptionIndex) { return option; }
       return { ...option, value: target.value };
@@ -98,7 +98,6 @@ const ImageContainer = ({ id, url }: Props) => {
 
   function getImageStyle() {
     const filters = options.map((option) => `${option.property}(${option.value}${option.unit})`);
-
     return { filter: filters.join(' ') };
   }
 
@@ -141,7 +140,6 @@ const ImageContainer = ({ id, url }: Props) => {
       <div className={styles.sidebar}>
         {options.map((option, index) => (
           <SidebarItem
-            className={styles.sidebarItem}
             key={index}
             name={option.name}
             active={index === selectedOptionIndex}
@@ -192,7 +190,7 @@ const ImageContainer = ({ id, url }: Props) => {
         min={selectedOption.range.min}
         max={selectedOption.range.max}
         value={selectedOption.value}
-        handleChange={handleSliderChange}
+        handleSlider={handleSlider}
       />
     </div>
   );

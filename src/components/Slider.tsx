@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../styles/ImageGallery.module.css';
 
-const Slider = ({ min, max, value, handleChange}) => {
+const Slider = ({ min, max, value, handleSlider}) => {
   return (
     <div className={styles.sidebarContainer}>
     <input
@@ -10,7 +10,7 @@ const Slider = ({ min, max, value, handleChange}) => {
       min={min}
       max={max}
       value={value}
-      onChange={handleChange}
+      onChange={handleSlider}
     />
   </div>
   );

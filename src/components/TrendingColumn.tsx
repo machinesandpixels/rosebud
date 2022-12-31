@@ -4,7 +4,7 @@ import column from '../../styles/Column.module.css';
 
 const TrendingColumn = () => (
   <aside className={styles.column}>
-    <h3>Trending</h3>
+    <p className={column.title}> Trending </p>
     <div className={column.gallery}>
       <div className={column.card} />
       <div className={column.card} />

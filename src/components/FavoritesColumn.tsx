@@ -32,7 +32,7 @@ const FavoritesColumn = () => {
 
   return (
     <aside onDragOver={allowDrop} onDrop={dropHandler} className={`${styles.column} ${styles.scroll}`}>
-      <h3> Favorites </h3>
+      <p className={column.title}> Favorites </p>
       <div className={column.gallery}>
         {
       favorites.map((fav) => (

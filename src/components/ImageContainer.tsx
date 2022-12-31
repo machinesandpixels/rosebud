@@ -14,13 +14,9 @@ import {
   PopoverBody,
   PopoverArrow,
   PopoverCloseButton,
-  Slider,
-  SliderTrack,
-  SliderFilledTrack,
-  SliderThumb,
-  Tooltip,
 } from '@chakra-ui/react';
 import SidebarItem from './SidebarItem';
+import Slider from './Slider';
 import {
   addToFavorites,
   removeFavorite,
@@ -35,35 +31,46 @@ type Props = {
   url: string;
 }
 const DEFAULT_OPTIONS = [
+  // {
+  //   name: 'Brightness',
+  //   property: 'brightness',
+  //   value: 0,
+  //   range: {
+  //     min: 0,
+  //     max: 200,
+  //   },
+  //   unit: '%',
+  // },
+  // {
+  //   name: 'Contrast',
+  //   property: 'contrast',
+  //   value: 0,
+  //   range: {
+  //     min: 0,
+  //     max: 200,
+  //   },
+  //   unit: '%',
+  // },
+  // {
+  //   name: 'Saturation',
+  //   property: 'saturate',
+  //   value: 0,
+  //   range: {
+  //     min: 0,
+  //     max: 200,
+  //   },
+  //   unit: '%',
+  // },
   {
-    name: 'Brightness',
-    property: 'brightness',
-    value: 100,
+    name: 'Blur',
+    property: 'blur',
+    value: 0,
     range: {
       min: 0,
-      max: 200,
+      max: 100,
+      // max: 20,
     },
-    unit: '%',
-  },
-  {
-    name: 'Contrast',
-    property: 'contrast',
-    value: 100,
-    range: {
-      min: 0,
-      max: 200,
-    },
-    unit: '%',
-  },
-  {
-    name: 'Saturation',
-    property: 'saturate',
-    value: 100,
-    range: {
-      min: 0,
-      max: 200,
-    },
-    unit: '%',
+    unit: 'px',
   },
   {
     name: 'Grayscale',
@@ -75,16 +82,6 @@ const DEFAULT_OPTIONS = [
     },
     unit: '%',
   },
-  {
-    name: 'Blur',
-    property: 'blur',
-    value: 0,
-    range: {
-      min: 0,
-      max: 20,
-    },
-    unit: 'px',
-  },
 ];
 
 const ImageContainer = ({ id, url }: Props) => {
@@ -94,7 +91,7 @@ const ImageContainer = ({ id, url }: Props) => {
 
   function handleSliderChange({ target }) {
     setOptions((prevOptions) => prevOptions.map((option, index) => {
-      if (index !== selectedOptionIndex) return option;
+      if (index !== selectedOptionIndex) { return option; }
       return { ...option, value: target.value };
     }));
   }
@@ -131,14 +128,6 @@ const ImageContainer = ({ id, url }: Props) => {
   };
 
   const j = JSON.stringify({ id, url });
-  const [sliderValue, setSliderValue] = useState(0);
-  const [sliderRange, setSliderRange] = useState('0%');
-  const [showTooltip, setShowTooltip] = useState(false);
-
-  const handleSlider = (e) => {
-    setSliderValue(e);
-    setSliderRange(`${e.toString()}%`);
-  };
 
   return (
     <div className={styles.imageContainer}>
@@ -152,17 +141,19 @@ const ImageContainer = ({ id, url }: Props) => {
       <div className={styles.sidebar}>
         {options.map((option, index) => (
           <SidebarItem
+            className={styles.sidebarItem}
             key={index}
             name={option.name}
             active={index === selectedOptionIndex}
-            handleClick={() => setSelectedOptionIndex(index)}
+            handleClick={() => {
+              setSelectedOptionIndex(index);
+            }}
           />
         ))}
       </div>
       <Image
         onDragStart={(event) => dragStartHandler(event, j)}
         draggable
-        // style={{ filter: `grayscale(${sliderRange})` }}
         style={getImageStyle()}
         className={styles.image}
         src={url}
@@ -197,40 +188,12 @@ const ImageContainer = ({ id, url }: Props) => {
           </PopoverContent>
         </Portal>
       </Popover>
-      {/* min={selectedOption.range.min}
+      <Slider
+        min={selectedOption.range.min}
         max={selectedOption.range.max}
         value={selectedOption.value}
-        handleChange={handleSliderChange} */}
-      <Slider
-        id="slider"
-        defaultValue={0}
-        // defaultValue={selectedOption.value}
-        // min={0}
-        min={selectedOption.range.min}
-        // max={100}
-        max={selectedOption.range.max}
-        colorScheme="grey"
-        onChange={(input) => handleSlider(input)}
-        // onChange={handleSliderChange}
-        // onChange={(input) => handleSlider(input)}
-        onMouseEnter={() => setShowTooltip(true)}
-        onMouseLeave={() => setShowTooltip(false)}
-      >
-        <SliderTrack>
-          <SliderFilledTrack />
-        </SliderTrack>
-        <div className={styles.tooltip} />
-        <Tooltip
-          hasArrow
-          bg="#000000"
-          color="white"
-          placement="top"
-          isOpen={showTooltip}
-          label={`${sliderValue}%`}
-        >
-          <SliderThumb />
-        </Tooltip>
-      </Slider>
+        handleChange={handleSliderChange}
+      />
     </div>
   );
 };

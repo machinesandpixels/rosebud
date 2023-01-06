@@ -10,9 +10,10 @@ const Header = () => {
   const { toggleColorMode } = useColorMode();
   return (
     <div className={styles.headerContainer}>
-      <h1 className={styles.header}>Rosebud&apos;s Gallery</h1>
-      {/* <h1 className={styles.header}>Rosebud Images</h1> */}
-      <p>Find Your Inner Photographer</p>
+      <h1 className={styles.header}>
+        Images by Rosebud
+      </h1>
+      <p className={styles.subheader}>Find Your Inner Photographer</p>
       {/* <Button onClick={toggleColorMode} variant="link" colorScheme="black">
         try changing the theme.
       </Button> */}

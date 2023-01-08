@@ -15,7 +15,7 @@ import {
   PopoverArrow,
   PopoverCloseButton,
 } from '@chakra-ui/react';
-import SidebarItem from './SidebarItem';
+import FilterPanel from './FilterPanel';
 import Slider from './Slider';
 import {
   addToFavorites,
@@ -25,6 +25,7 @@ import {
   useAppDispatch,
 } from '../store/hooks';
 import styles from '../../styles/ImageGallery.module.css';
+import filterpanel from '../../styles/FilterPanel.module.css';
 
 type Props = {
   id: number;
@@ -137,9 +138,9 @@ const ImageContainer = ({ id, url }: Props) => {
           size="11"
         />
       </div>
-      <div className={styles.sidebar}>
+      <div className={filterpanel.filterPanelContainer}>
         {options.map((option, index) => (
-          <SidebarItem
+          <FilterPanel
             key={index}
             name={option.name}
             active={index === selectedOptionIndex}
@@ -156,8 +157,8 @@ const ImageContainer = ({ id, url }: Props) => {
         className={styles.image}
         src={url}
         alt="card-image"
-        width={200}
-        height={200}
+        width={250}
+        height={250} 
       />
       <Popover>
         <PopoverTrigger>

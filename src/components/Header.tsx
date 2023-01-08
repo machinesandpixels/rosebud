@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div className={header.headerContainer}>
       <h1 className={header.title}>
-        Images by Rosebud
+        Rosebud Images
       </h1>
       <p className={header.subtitle}>Find Your Inner Photographer</p>
       {/* <Button onClick={toggleColorMode} variant="link" colorScheme="black">

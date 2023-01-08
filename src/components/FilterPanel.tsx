@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import styles from '../../styles/ImageGallery.module.css';
+import filterpanel from '../../styles/FilterPanel.module.css';
 
-const SidebarItem = ({ name, active, handleClick }) => {
+const FilterPanel = ({ name, active, handleClick }) => {
     // const [isShown, setIsShown] = useState(false);
-
     return (
       <div className="">
          {/* <p> 
@@ -13,7 +12,7 @@ const SidebarItem = ({ name, active, handleClick }) => {
           { isShown ? name : '' }
         </p> */}
         <span 
-          className={styles.sidebarItem}
+          className={filterpanel.filterItem}
         // onMouseEnter={() => setIsShown(true)}
         // onMouseLeave={() => setIsShown(false)}
           // className={`styles.sidebarItem ${active ? 'active' : ''}`}
@@ -24,4 +23,4 @@ const SidebarItem = ({ name, active, handleClick }) => {
       )
     };
 
-export default SidebarItem;
+export default FilterPanel;

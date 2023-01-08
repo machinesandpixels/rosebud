@@ -3,7 +3,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 4rem;
     position: relative;
 }
 
@@ -11,7 +11,7 @@
     font-size: .8rem;
     letter-spacing: 3px;
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     text-transform: uppercase;
 }
 

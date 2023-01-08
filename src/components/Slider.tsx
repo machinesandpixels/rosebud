@@ -1,19 +1,19 @@
 import React from 'react';
-import styles from '../../styles/ImageGallery.module.css';
+import slider from '../../styles/Slider.module.css';
 
-const Slider = ({ min, max, value, handleSlider}) => {
-  return (
-    <div className={styles.sidebarContainer}>
+const Slider = ({
+  min, max, value, handleSlider,
+}) => (
+  <div>
     <input
       type="range"
-      className={styles.slider}
+      className={slider.slider}
       min={min}
       max={max}
       value={value}
       onChange={handleSlider}
     />
   </div>
-  );
-}
+);
 
 export default Slider;

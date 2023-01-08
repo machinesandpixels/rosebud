@@ -4,20 +4,20 @@ import {
   Button,
   useColorMode,
 } from '@chakra-ui/react';
-import styles from '../../styles/ImageGallery.module.css';
+import header from '../../styles/Header.module.css';
 
 const Header = () => {
   const { toggleColorMode } = useColorMode();
   return (
-    <div className={styles.headerContainer}>
-      <h1 className={styles.header}>
+    <div className={header.headerContainer}>
+      <h1 className={header.title}>
         Images by Rosebud
       </h1>
-      <p className={styles.subheader}>Find Your Inner Photographer</p>
+      <p className={header.subtitle}>Find Your Inner Photographer</p>
       {/* <Button onClick={toggleColorMode} variant="link" colorScheme="black">
         try changing the theme.
       </Button> */}
-      <div className={styles.colorModeContainer}>
+      <div className={header.colorModeContainer}>
         <AiOutlineCamera
           onClick={toggleColorMode}
           size="25"

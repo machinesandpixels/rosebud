@@ -101,28 +101,6 @@
 .tooltip {
     padding: .7rem;
 }
-.headerContainer {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
-    margin-bottom: 1.7rem;
-    position: relative;
-}
-
-.headerContainer > p {
-    font-size: .8rem;
-    letter-spacing: 3px;
-    margin-top: 1rem;
-    text-transform: uppercase;
-}
-
-.colorModeContainer {
-    position: absolute;
-    top: -5px;
-    right: 35px;
-}
 
 .imageContainer {
     position: relative;
@@ -148,17 +126,6 @@
     animation: fadeIn 2.5s; 
 }
  
-.header {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 800;
-}
-
-.subheader {
-    font-weight: 600;
-}
-
 .sidebar {
     /* background-color: rgb(0, 0, 0); */
     position: absolute;
@@ -211,17 +178,25 @@
     display: none;
   } */
 
-  .sliderContainer {
-    /* max-width: 200px; */
+  /* .sliderContainer {
+    max-width: 200px;
     margin-top: 2rem;
     padding: 2rem;
-  }
-  
-  .slider {
-    width: 100%;
-    cursor: pointer;
-  }
-  
+  } */
+
+  /* .sliderContainer {
+    background-color: #ffffff;
+    width: 90vmin;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px 20px;
+    border-radius: 5px;
+  } */
 
 @keyframes fadeIn {
     0% { opacity: 0; }

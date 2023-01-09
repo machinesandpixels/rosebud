@@ -122,6 +122,12 @@
     left: 265px;
 }
 
+.arrowIcon {
+    position: absolute;
+    bottom: -30px;
+    left: 265px;
+}
+
 .image {
     animation: fadeIn 2.5s; 
 }

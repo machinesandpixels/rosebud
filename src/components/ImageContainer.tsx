@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { FiHeart } from 'react-icons/fi';
 import { HiDownload } from 'react-icons/hi';
+import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 import Image from 'next/image';
+import Link from 'next/link';
 import { saveAs } from 'file-saver';
 import {
   Button,
@@ -150,6 +152,13 @@ const ImageContainer = ({ id, url }: Props) => {
           />
         ))}
       </div>
+      <div className={styles.arrowIcon}>
+        <Link href={`/images/${id}`} key={id}>
+          <BsFillArrowRightSquareFill
+            size="11"
+          />
+        </Link>
+      </div>
       <Image
         onDragStart={(event) => dragStartHandler(event, j)}
         draggable
@@ -158,7 +167,7 @@ const ImageContainer = ({ id, url }: Props) => {
         src={url}
         alt="card-image"
         width={250}
-        height={250} 
+        height={250}
       />
       <Popover>
         <PopoverTrigger>

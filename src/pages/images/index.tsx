@@ -4,17 +4,17 @@ import type { NextPage } from 'next';
 import {
   useAppDispatch,
   useAppSelector,
-} from '../store/hooks';
+} from '../../store/hooks';
 import {
   getPhotos,
   selectPhotos,
-} from '../slices/photoSlice';
-import Header from '../components/Header';
-import TrendingColumn from '../components/TrendingColumn';
-import FavoritesColumn from '../components/FavoritesColumn';
-import ImageGalleryColumn from '../components/ImageGalleryColumn';
-import Footer from '../components/Footer';
-import styles from '../../styles/ImageGallery.module.css';
+} from '../../slices/photoSlice';
+import Header from '../../components/Header';
+import TrendingColumn from '../../components/TrendingColumn';
+import FavoritesColumn from '../../components/FavoritesColumn';
+import ImageGalleryColumn from '../../components/ImageGalleryColumn';
+import Footer from '../../components/Footer';
+import styles from '../../../styles/ImageGallery.module.css';
 
 const Images: NextPage = () => {
   const {

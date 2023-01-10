@@ -27,6 +27,13 @@
     /* filter: drop-shadow(1px 1px 1px rgb(0, 0, 0)); */
   }
   
+  .name {
+   display: flex;
+   justify-content: center;
+   padding-top: 1.5rem;
+   color: rgb(201, 201, 201);
+   text-transform: uppercase;
+  }
   /* .sidebarItem:hover, .sidebar-item:focus {
     background-color: hsl(0, 0%, 42%);
   }

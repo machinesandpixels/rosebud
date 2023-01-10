@@ -18,6 +18,7 @@ const FilterPanel = ({ name, active, handleClick }) => {
           // className={`styles.sidebarItem ${active ? 'active' : ''}`}
           onClick={handleClick}
         >
+          <p  className={filterpanel.name}> { name } </p> 
         </span>
         </div>
       )

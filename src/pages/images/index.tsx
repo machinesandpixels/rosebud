@@ -42,7 +42,7 @@ const Images: NextPage = () => {
       </Head>
       <Header />
       <main className={styles.grid}>
-        <TrendingColumn />
+        {/* <TrendingColumn /> */}
         <ImageGalleryColumn />
         <FavoritesColumn />
       </main>

@@ -1,7 +1,7 @@
 .filterPanelContainer {
     position: absolute;
     top: 0;
-    right: 235px;
+    right: 247px;
     width: 70px;
     height: 250px;
     font-size: 7px;
@@ -31,8 +31,10 @@
    display: flex;
    justify-content: center;
    padding-top: 1.5rem;
-   color: rgb(201, 201, 201);
+   color: rgb(37, 37, 37);
+   /* color: rgb(201, 201, 201); */
    text-transform: uppercase;
+   font-size: 6px;
   }
   /* .sidebarItem:hover, .sidebar-item:focus {
     background-color: hsl(0, 0%, 42%);

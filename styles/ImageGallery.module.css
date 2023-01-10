@@ -62,7 +62,7 @@
 }
   
 .card {
-    /* max-width: 330px; */
+    max-width: 370px;
     max-height: 350px;
     height: 350px;
     width: 370px;
@@ -76,6 +76,7 @@
     /* align-content: center; */
     justify-content: center;
     border: 1px solid #eaeaea;
+    padding: 10px;
     /* background-color: black; */
     
     /* transition: box-shadow.2s ease; */
@@ -110,6 +111,8 @@
     max-height: 250px;
     max-width: 250px;
     /* filter: drop-shadow(0 0 0.65rem rgb(43, 43, 43)); */
+    /* border: 10px solid rgb(0, 0, 0); */
+    margin-right: -20px;
 }
 
 .favoriteIcon {

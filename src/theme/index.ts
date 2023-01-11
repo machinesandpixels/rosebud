@@ -3,8 +3,10 @@ import { mode } from '@chakra-ui/theme-tools';
 
 const theme = extendTheme({
   fonts: {
-    heading: `Readex Pro, ${base.fonts?.heading}`,
-    body: `Readex Pro, ${base.fonts?.body}`,
+    heading: `Urbanist, ${base.fonts?.heading}`,
+    body: `Urbanist, ${base.fonts?.body}`,
+    // heading: `Readex Pro, ${base.fonts?.heading}`,
+    // body: `Readex Pro, ${base.fonts?.body}`,
   },
   styles: {
     global: (props) => ({

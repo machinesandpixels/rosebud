@@ -38,7 +38,7 @@ const Images: NextPage = () => {
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@800&display=swap" rel="stylesheet" />
       </Head>
       <Header />
       <main className={styles.grid}>

@@ -14,11 +14,14 @@ const Header = () => {
       <h1 className={header.title}>
         Rosebud Images
       </h1>
-      <p className={header.subtitle}>Find Your Inner Photographer</p>
+      <p>Find Your Inner Photographer</p>
       {/* <Button onClick={toggleColorMode} variant="link" colorScheme="black">
         try changing the theme.
       </Button> */}
-      <ModernWonders />
+      <div className={header.modernWonders}>
+        <ModernWonders />
+      </div>
+
       <div className={header.colorModeContainer}>
         <AiOutlineCamera
           onClick={toggleColorMode}

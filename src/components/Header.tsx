@@ -4,6 +4,7 @@ import {
   Button,
   useColorMode,
 } from '@chakra-ui/react';
+import ModernWonders from './ModernWonders';
 import header from '../../styles/Header.module.css';
 
 const Header = () => {
@@ -17,6 +18,7 @@ const Header = () => {
       {/* <Button onClick={toggleColorMode} variant="link" colorScheme="black">
         try changing the theme.
       </Button> */}
+      <ModernWonders />
       <div className={header.colorModeContainer}>
         <AiOutlineCamera
           onClick={toggleColorMode}

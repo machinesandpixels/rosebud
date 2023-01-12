@@ -5,6 +5,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import ModernWonders from './ModernWonders';
+import SearchForm from './SearchForm';
 import header from '../../styles/Header.module.css';
 
 const Header = () => {
@@ -20,6 +21,9 @@ const Header = () => {
       </Button> */}
       <div className={header.modernWonders}>
         <ModernWonders />
+      </div>
+      <div>
+        <SearchForm />
       </div>
 
       <div className={header.colorModeContainer}>

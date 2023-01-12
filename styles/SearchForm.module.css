@@ -1,0 +1,17 @@
+.container {
+   display: flex;
+   max-width: 100%;
+   /* width: 500px; */
+}
+
+.btn {
+   margin-left: 4px;
+}
+
+.input {
+    border: .5px solid rgb(228, 219, 219);
+    border-radius: 4px;
+    height: 32px;
+    width: 400px;
+    padding: .9rem;
+}

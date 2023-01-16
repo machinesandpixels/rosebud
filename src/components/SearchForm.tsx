@@ -33,10 +33,11 @@ const SearchForm = () => {
         />
       </label>
       <Button
+        onClick={handleClick}
         size="sm"
         className={searchForm.btn}
       >
-        <MdImageSearch onClick={handleClick} />
+        <MdImageSearch />
       </Button>
     </form>
   );

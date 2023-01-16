@@ -22,7 +22,7 @@ const Header = () => {
       <div className={header.modernWonders}>
         <ModernWonders />
       </div>
-      <div>
+      <div className={header.searchForm}>
         <SearchForm />
       </div>
 

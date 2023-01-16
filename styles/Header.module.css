@@ -10,8 +10,8 @@
 .headerContainer > p {
     font-size: .7rem;
     letter-spacing: 3px;
-    margin-top: .8rem;
-    margin-bottom: 1.5rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
     text-transform: uppercase;
 }
 
@@ -24,6 +24,11 @@
 .modernWonders {
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+.searchForm {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
 }
 
 .colorModeContainer {

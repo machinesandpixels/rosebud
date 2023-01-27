@@ -134,7 +134,17 @@
 }
 
 .image {
-    animation: fadeIn 2.5s; 
+    animation: fadeIn 2.5s;
+    height: 250px; 
+    width: 250px;
+    object-fit: cover;
+    transition: transform .5s;
+}
+
+.image:hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2);
 }
  
 @keyframes fadeIn {
